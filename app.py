@@ -1,11 +1,11 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from pandas_datareader.data import DataReader
-import time
-from collections import deque
-import plotly.graph_objs as go
-import random
+# from pandas_datareader.data import DataReader
+# import time
+# from collections import deque
+# import plotly.graph_objs as go
+# import random
 from get_data import get_cases_only
 
 cases_df = get_cases_only()
