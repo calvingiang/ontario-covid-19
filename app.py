@@ -15,14 +15,14 @@ y = list(cases_df['New Cases'])
 # first lesson
 app = dash.Dash()
 app.layout = html.Div(children=[
-    html.H1('Covid-19 New Cases in Ontario'),
+    html.H1('Ontario Covid-19'),
     dcc.Graph(id='example',
               figure ={
                   'data': [{'x':x, 'y':y, 'type': 'bar',
                             'name':'cases'},
                            ],
               'layout': {
-                  'title': 'Basic Dash Example'
+                  'title': 'New Cases in Ontario'
               }
               })
 
