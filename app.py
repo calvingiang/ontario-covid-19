@@ -13,7 +13,10 @@ cases_df = get_cases_only()
 x = list(cases_df['Reported Date'])
 y = list(cases_df['New Cases'])
 # first lesson
+########### Initiate the app
 app = dash.Dash()
+server = app.server
+
 app.layout = html.Div(children=[
     html.H1('Ontario Covid-19'),
     dcc.Graph(id='example',
@@ -28,8 +31,7 @@ app.layout = html.Div(children=[
 
     ])
 
-########### Initiate the app
-server = app.server
+
 
 
 if __name__ == '__main__':
