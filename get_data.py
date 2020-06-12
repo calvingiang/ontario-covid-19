@@ -44,7 +44,7 @@ def get_cases_only():
     previous_cases = previous_cases.shift(periods=1).fillna(0).drop(columns=['Reported Date']).rename(columns={'Total Cases':'Yesterday Cases'})
     cases_df = pandas.merge(cases_df, previous_cases, left_index=True, right_index=True)
     cases_df['New Cases'] = cases_df['Total Cases'] - cases_df['Yesterday Cases']
-    cases_df = cases_df[['Reported Date','New Cases']]
+    cases_df = cases_df[['Reported Date', 'Total Cases', 'New Cases']]
     cases_df['Reported Date'] = cases_df['Reported Date'].apply(time_format)
     return cases_df
 
