@@ -27,12 +27,10 @@ app.layout = html.Div(children=[
               })
 
     ])
-tabtitle='covid-19'
+
 ########### Initiate the app
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-app.title=tabtitle
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
