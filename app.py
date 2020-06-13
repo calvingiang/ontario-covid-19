@@ -8,6 +8,7 @@ import dash_table
 # import plotly.graph_objs as go
 # import random
 import pandas
+
 from get_data import get_cases_only
 from operators import (html_graph, make_bar_graph, make_line_graph)
 
