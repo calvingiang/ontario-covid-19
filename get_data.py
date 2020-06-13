@@ -1,6 +1,7 @@
 import requests
 import pandas
 
+
 def get_ontario_data():
     base_url = 'https://data.ontario.ca'
     record_length = 1
@@ -37,6 +38,7 @@ def get_ontario_cases():
         record_num=record_num+1
     return covid_df
 
+
 def get_cases_only():
     covid_cases = get_ontario_cases()
     cases_df = covid_cases[['Reported Date','Total Cases']].fillna(0).reset_index().drop(columns=['index'])
@@ -48,6 +50,13 @@ def get_cases_only():
     cases_df['Reported Date'] = cases_df['Reported Date'].apply(time_format)
     return cases_df
 
+
 def time_format(body):
     #return datetime.strptime(body, '%Y-%m-%d')
     return body.replace('T00:00:00','')
+
+def get_all_ontario_data():
+    df = get_ontario_data()
+    df.to_csv('./src/ontario.csv')
+
+get_all_ontario_data()
