@@ -101,7 +101,7 @@ app.layout = html.Div(children=[
     ]),
 
     html.Div([
-        html.P('Last updated on {} EST'.format(datetime.now().strftime("%d/%m/%Y %H:%M:%S")), style={'textAlign': 'right', 'font-size': '12px'})
+        html.P('Last updated on {} UCT'.format(datetime.now().strftime("%d/%m/%Y %H:%M:%S")), style={'textAlign': 'right', 'font-size': '12px'})
     ]),
 
     dash_table.DataTable(
