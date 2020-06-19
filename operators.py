@@ -74,7 +74,7 @@ def get_multi_linegraph(df, x_column, y_column, unique_feature_list,
         fig.layout.title = title
     fig = custom_layout(fig)
     return fig
-
+    print('')
 
 def html_graph(classname, graph):
     return html.Div(className=classname,
@@ -84,3 +84,4 @@ def html_graph(classname, graph):
                     style={'border': 'solid', 'border-width': '0.1px',
                            'columnCount': 1},
                     )
+
