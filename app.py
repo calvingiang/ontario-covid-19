@@ -24,7 +24,7 @@ today = x[-1]
 yesterday = x[-2]
 today_case = y_cases[-1]
 yesterday_case = y_cases[-2]
-top_table_dict = {'Date':[today, yesterday], 'New Cases': [str(int(today_case)), str(int(yesterday_case))], 'Source': [case_url, status_url]}
+top_table_dict = {'Date':[today, yesterday], 'New Cases': [str(int(today_case)), str(int(yesterday_case))], 'Sources': [case_url, status_url]}
 top_table = pandas.DataFrame(data=top_table_dict)
 
 # new case bar graph
