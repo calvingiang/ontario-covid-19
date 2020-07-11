@@ -50,9 +50,9 @@ def get_multibargraph(df, x_column, y_column, group_split, title=None):
     fig = px.bar(df, x=x_column, y=y_column, color=group_split,
                        barmode='group',
                        height=400)
-    fig = custom_layout(fig)
     if title:
         fig.layout.title = title
+    fig = custom_layout(fig)
     return fig
 
 def get_multi_linegraph(df, x_column, y_column, unique_feature_list,

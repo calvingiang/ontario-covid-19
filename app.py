@@ -73,6 +73,14 @@ age_line_graph = get_multi_linegraph(age_df, 'Accurate_Episode_Date',
                                         'Age_Group', age_list,
                                         'Cases by Age Group')
 
+# case by PHU
+phu_df = other_df.groupby(['Accurate_Episode_Date', 'Reporting_PHU_City']
+                             ).size().reset_index().rename(columns={0: 'total'})
+phu_list = list(phu_df['Reporting_PHU_City'].unique())
+phu_line_graph = get_multi_linegraph(phu_df, 'Accurate_Episode_Date',
+                                        'Reporting_PHU_City', phu_list,
+                                        'Cases by PHU City')
+
 # gender graph
 gender_df = other_df.groupby(['Accurate_Episode_Date', 'Client_Gender']
                              ).size().reset_index().rename(columns={0: 'total'})
@@ -119,9 +127,9 @@ app.layout = html.Div(children=[
     html.Br(),
     html_graph(classname='Historical Total Cases', graph=total_case_graph),
     html.Br(),
-    html_graph(classname='Cases by City', graph=new_city_case_bar),
+    html_graph(classname='PHU Group', graph=phu_line_graph),  # fatal_fig
     html.Br(),
-    html_graph(classname='Covid Spread', graph=travel_related_bar),
+    html_graph(classname='Cases by City', graph=new_city_case_bar),
     html.Br(),
     html_graph(classname='fatal', graph=fatal_fig),
     html.Br(),
@@ -129,8 +137,8 @@ app.layout = html.Div(children=[
     html.Br(),
     html_graph(classname='Cases by Gender', graph=gender_line_graph),
     html.Br(),
-
-
+    html_graph(classname='Covid Spread', graph=travel_related_bar),
+    html.Br(),
 
 
     html.Div(html.P([html.Br()])),
