@@ -59,4 +59,4 @@ def get_all_ontario_data():
     df = get_ontario_data()
     df.to_csv('./src/ontario.csv')
 
-#et_all_ontario_data()
+#get_all_ontario_data()
