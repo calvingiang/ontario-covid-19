@@ -4,10 +4,11 @@ import dash_html_components as html
 import pandas
 import plotly.express as px
 import plotly.graph_objects as go
-
+from get_data import get_ontario_data
 
 def ontario_other_data():
-    df = pandas.read_csv('./src/ontario.csv')
+    # df = pandas.read_csv('./src/ontario.csv')
+    df =  get_ontario_data()
     return df.iloc[:, 3:]
 
 def custom_layout(fig):
